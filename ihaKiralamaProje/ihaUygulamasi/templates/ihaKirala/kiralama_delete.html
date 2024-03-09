@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2>Kiralama Sil</h2>
+    <p>Emin misiniz? Bu işlem geri alınamaz!</p>
+    <form method="post" class="form" action="{% url 'kiralama_delete' kiralama.id %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">Sil</button>
+    </form>
+    <a href="{% url 'kiralama_list' %}" class="btn btn-secondary mt-3">Listeye Geri Dön</a>
+  </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!-- ihaApp/templates/ihaApp/iha_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2>IHA Detayları</h2>
+    <p><strong>Marka:</strong> {{ iha.marka }}</p>
+    <p><strong>Model:</strong> {{ iha.model }}</p>
+    <p><strong>Ağırlık:</strong> {{ iha.agirlik }}</p>
+    <p><strong>Kategori:</strong> {{ iha.kategori }}</p>
+    <a href="{% url 'iha_list' %}" class="btn btn-primary">Geri Dön</a>
+  </div>
+{% endblock %}

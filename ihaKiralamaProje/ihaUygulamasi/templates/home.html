@@ -1,0 +1,18 @@
+<!-- ihaApp/templates/ihaApp/home.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="container-fluid">
+    <h2>Hoş Geldiniz!</h2>
+    <p>Bu Django projesine hoş geldiniz. Projedeki işlevselliğe erişim sağlamak için yukarıdaki menüyü kullanabilirsiniz.</p>
+    <h3>Mevcut İHA'lar</h3>
+    <ul>
+      {% for iha in iha_list %}
+      <li>{{ iha.name }} - {{ iha.description }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

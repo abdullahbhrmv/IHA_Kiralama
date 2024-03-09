@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2>Kiralama Listesi</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">IHA</th>
+          <th scope="col">Başlangıç Tarihi</th>
+          <th scope="col">Bitiş Tarihi</th>
+          <th scope="col">Kiralayan Üye</th>
+          <th scope="col">İşlemler</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for kiralama in kiralama_list %}
+          <tr>
+            <td>{{ kiralama.id }}</td>
+            <td>{{ kiralama.iha }}</td>
+            <td>{{ kiralama.tarih_baslangic }}</td>
+            <td>{{ kiralama.tarih_bitis }}</td>
+            <td>{{ kiralama.kiralayan_uye }}</td>
+            <td>
+              <a href="{% url 'kiralama_detail' kiralama.id %}" class="btn btn-info btn-sm">Detay</a>
+              <a href="{% url 'kiralama_update' kiralama.id %}" class="btn btn-warning btn-sm">Güncelle</a>
+              <a href="{% url 'kiralama_delete' kiralama.id %}" class="btn btn-danger btn-sm">Sil</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

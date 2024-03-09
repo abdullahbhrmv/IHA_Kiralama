@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2>Kiralama Ekle</h2>
+    <form method="post" class="form" action="{% url 'kiralama_create' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Ekle</button>
+    </form>
+    <a href="{% url 'kiralama_list' %}" class="btn btn-secondary mt-3">Listeye Geri Dön</a>
+  </div>
+{% endblock %}

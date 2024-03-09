@@ -1,0 +1,15 @@
+<!-- ihaApp/templates/ihaApp/iha_update.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2>IHA Güncelle</h2>
+    <form method="post" class="form" action="{% url 'iha_update' iha.id %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-warning">Güncelle</button>
+    </form>
+    <a href="{% url 'iha_list' %}" class="btn btn-secondary mt-2">Geri Dön</a>
+  </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2>Kiralama Detayı</h2>
+    <p><strong>ID:</strong> {{ kiralama.id }}</p>
+    <p><strong>IHA:</strong> {{ kiralama.iha }}</p>
+    <p><strong>Başlangıç Tarihi:</strong> {{ kiralama.tarih_baslangic }}</p>
+    <p><strong>Bitiş Tarihi:</strong> {{ kiralama.tarih_bitis }}</p>
+    <p><strong>Kiralayan Üye:</strong> {{ kiralama.kiralayan_uye }}</p>
+    <a href="{% url 'kiralama_list' %}" class="btn btn-primary">Listeye Geri Dön</a>
+  </div>
+{% endblock %}

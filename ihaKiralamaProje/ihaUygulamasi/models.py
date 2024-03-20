@@ -8,6 +8,7 @@ class IHA(models.Model):
     model = models.CharField(max_length=50)
     agirlik = models.FloatField()
     kategori = models.CharField(max_length=50)
+    fotograf = models.ImageField(upload_to='IHA_PHOTOS/', null=True, blank=True)
 
     def __str__(self):
         return f"{self.marka} {self.model}"

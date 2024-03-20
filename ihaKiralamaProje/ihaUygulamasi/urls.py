@@ -1,10 +1,11 @@
 # ihaUygulamasi/urls.py
 
 from django.urls import path
-from .views import home, iha_list, iha_detail, iha_create, iha_update, iha_delete, kiralama_list, kiralama_detail, kiralama_create, kiralama_delete, kiralama_update, login, register, register_user, logout
+from .views import home, iha_list, iha_detail, iha_create, iha_update, iha_delete, kiralama_list, kiralama_detail, kiralama_create, kiralama_delete, kiralama_update, login, register, register_user, logout, mevcut_iha_listesi
 
 urlpatterns = [
     path('', home, name='home'),
+    path('', mevcut_iha_listesi, name='mevcut_iha_listesi'),
     path('iha-list/', iha_list, name='iha_list'),
     path('iha-detail/<int:iha_id>/', iha_detail, name='iha_detail'),
     path('iha-create/', iha_create, name='iha_create'),

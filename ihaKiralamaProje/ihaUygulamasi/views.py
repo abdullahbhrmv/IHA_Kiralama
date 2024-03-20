@@ -85,6 +85,10 @@ def kiralama_delete(request, kiralama_id):
     kiralama.delete()
     return redirect('kiralama_list')
 
+def mevcut_iha_listesi(request):
+    iha_listesi = IHA.objects.all()
+    return render(request, 'ihaApp/mevcut_iha_listesi.html', {'iha_listesi': iha_listesi})
+
 def login(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, request.POST)

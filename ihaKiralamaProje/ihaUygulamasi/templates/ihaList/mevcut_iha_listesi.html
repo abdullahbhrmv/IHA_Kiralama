@@ -1,0 +1,14 @@
+<!-- ihaApp/templates/ihaApp/mevcut_iha_listesi.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2>Mevcut İHA'lar</h2>
+  <ul>
+    {% for iha in iha_listesi %}
+      <li>{{ iha.marka }} - {{ iha.model }} - Ağırlık: {{ iha.agirlik }} - Kategori: {{ iha.kategori }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
